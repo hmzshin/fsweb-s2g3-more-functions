@@ -44,7 +44,7 @@ console.log(
 */
 
 function ortalamaBul(numberArr) {
-  if (numberArr == []) {
+  if (numberArr.length === 0) {
     return null;
   } else {
     const genelToplam = numberArr.reduce((toplam, arrIndex) => {
@@ -75,8 +75,12 @@ console.log("görev2 :", ortalamaBul([]));
 */
 
 function ortalamadanBuyukleriBul(numberArr, ortalamaF) {
-  const arrOrtalamasi = ortalamaF(numberArr);
-  return numberArr.filter((number) => number >= arrOrtalamasi);
+  if (numberArr != 0) {
+    const arrOrtalamasi = ortalamaF(numberArr);
+    return numberArr.filter((number) => number >= arrOrtalamasi);
+  } else {
+    return null;
+  }
 }
 
 console.log(ortalamadanBuyukleriBul([50, -26, 153, 7], ortalamaBul));
